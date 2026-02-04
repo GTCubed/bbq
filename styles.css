@@ -201,7 +201,7 @@ main {
 }
 
 /* Mobile stacking */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .landing-container {
     flex-direction: column;
     gap: 1rem;
@@ -220,7 +220,7 @@ main {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   /* Stack items */
   .landing-container {
     flex-direction: column;
