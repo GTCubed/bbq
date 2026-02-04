@@ -117,10 +117,9 @@ main {
    Home SECTION
 ========================= */
 .home-logo {
-  display: flex;
-  justify-content: center;
-  padding: 0; /* override section padding if needed */
+  padding: calc(3rem + 80px) 10% 1.5rem;
 }
+
 
 .home-logo {
   margin-top: 3rem;   /* increase this for more space */
@@ -235,11 +234,27 @@ main {
 }
 
 
-/* Mobile stacking */
 @media (max-width: 768px) {
   .landing-container {
     flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: 1rem;
+  }
+
+  .landing-text {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .landing-text .text-box {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 740px;
+  }
+
+  .landing-video {
+    justify-content: center;
   }
 
   .landing-video video {
@@ -248,35 +263,39 @@ main {
     height: auto;
   }
 
-  /* Keep it one line but ensure it can shrink enough on small screens */
+  /* Title: one line, but guaranteed to fit */
   .landing-text h2 {
-    font-size: clamp(1.4rem, 6vw, 2.6rem);
-    letter-spacing: 1px;
-  }
-}
+    white-space: nowrap;
+    display: inline-block;
+    max-width: 100%;
 
-@media (max-width: 768px) {
-  .landing-container {
-    flex-direction: column;
-  }
-
-  .landing-text {
-    order: 1;
-  }
-
-  .landing-video {
-    order: 2;
+    font-size: clamp(1.05rem, 5.2vw, 1.9rem);
+    letter-spacing: 0;        /* IMPORTANT: helps it fit */
+    padding-right: 0.35em;    /* prevents last-letter clip */
   }
 }
 
 
 @media (max-width: 1200px) {
-  /* Stack items */
   .landing-container {
     flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
-  /* Move text (title) above video */
+  .landing-text {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .landing-text .text-box {
+    margin: 0 auto;
+  }
+
+  .landing-video {
+    justify-content: center;
+  }
+   /* Move text (title) above video */
   .landing-text {
     order: 1;
   }
@@ -285,6 +304,9 @@ main {
     order: 2;
   }
 }
+
+
+
 
 
 /* =========================
