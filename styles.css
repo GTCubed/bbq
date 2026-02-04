@@ -1,0 +1,388 @@
+/* =========================
+   BASE STYLES
+========================= */
+
+body {
+  margin: 0;
+  font-family: 'Barlow', sans-serif;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.text-element {
+  color: black;
+  font-size: 18px;
+  transition: opacity 0.3s ease-in-out;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 10px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 0 10px;
+  line-height: 1.6;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+  position: relative;
+  z-index: 1;
+  padding: 3rem 10%;
+  text-align: center;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2.5rem;
+  background-color: #7f158d;
+  z-index: 1000;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Buttons */
+.btn,
+.call-btn {
+  display: inline-block;
+  background-color: #7f158d;
+  color: #ffffff;
+  padding: 0.75rem 1.25rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover,
+.call-btn:hover {
+  background-color: #ffffff;
+  color: #7f158d;
+}
+
+/* Facebook button */
+.navbar .facebook-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1877f2;
+  color: #ffffff;
+  padding: 0.6rem 2.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar .facebook-btn:hover {
+  background-color: #145dbf;
+}
+
+/* Review button spacing */
+.nav-right .review-btn {
+  margin-right: 0.5rem;
+}
+
+/* Page offset for fixed navbar */
+main {
+  padding-top: 80px;
+}
+
+/* =========================
+   LANDING SECTION
+========================= */
+
+/* =========================
+   LANDING SECTION (UPDATED)
+========================= */
+
+.landing-container {
+  display: flex;
+  align-items: center;        /* vertical alignment */
+  justify-content: center;    /* center horizontally */
+  gap: 2rem;                  /* space between columns */
+  flex-wrap: wrap;            /* for smaller screens */
+}
+
+.landing-text {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Text box holding headline + paragraph */
+.landing-text .text-box {
+  max-width: 740px;
+  width: 100%;
+  text-align: center;
+
+  /* a little extra breathing room for the hero title */
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* HERO TITLE: forced one-line + fits inside box */
+.landing-text h2 {
+  font-size: clamp(1.35rem, 3.8vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  margin: 0 0 1rem 0;
+
+  white-space: nowrap;   /* force one line */
+  overflow: visible;    /* do NOT clip */
+  
+  background: linear-gradient(90deg, #000000, #000000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 6px 20px rgba(0,0,0,0.35);
+}
+
+.landing-text h2 .highlight {
+  border-bottom: 3px solid #7f158d;
+  color: #7f158d;
+  padding-bottom: 0.05em;
+}
+
+.landing-text h2 span {
+  background: none !important;   /* remove gradient */
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: #7f158d; /* your solid color */
+  color: #7f158d;                /* fallback */
+}
+
+
+/* Optional: make landing paragraph a touch more readable */
+.landing-text p {
+  margin: 0;
+}
+
+/* Video column */
+.landing-video {
+  flex: 0 0 auto; /* do not shrink videos */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-video video {
+  width: clamp(220px, 20vw, 320px);
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  object-fit: cover;
+}
+
+/* Mobile stacking */
+@media (max-width: 768px) {
+  .landing-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .landing-video video {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+
+  /* Keep it one line but ensure it can shrink enough on small screens */
+  .landing-text h2 {
+    font-size: clamp(1.4rem, 6vw, 2.6rem);
+    letter-spacing: 1px;
+  }
+}
+
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.about-text,
+.about-image {
+  flex: 1;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* =========================
+   TEXT BOX
+========================= */
+
+.text-box {
+  background-color: rgba(255,255,255,0.9);
+  border: 2px solid #7f158d;
+  border-radius: 12px;
+  padding: 20px 30px;
+  margin: 20px auto;
+  max-width: 800px;
+  width: 90%;
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  overflow-wrap: break-word;
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   MENU
+========================= */
+
+.menu {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.menu-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* =========================
+   CAROUSEL
+========================= */
+
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 4px solid #7f158d;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.carousel-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.carousel-track img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Carousel buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  background-color: #7f158d;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 2rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+.carousel-btn:hover {
+  background-color: #ffffff;
+  color: #7f158d;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  body {
+    padding-top: 70px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-left,
+  .nav-right {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .nav-right .review-btn {
+    margin-right: 0;
+  }
+
+  .landing-container {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .landing-video video {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
