@@ -220,6 +220,22 @@ main {
   }
 }
 
+@media (max-width: 768px) {
+  /* Stack items */
+  .landing-container {
+    flex-direction: column;
+  }
+
+  /* Move text (title) above video */
+  .landing-text {
+    order: 1;
+  }
+
+  .landing-video {
+    order: 2;
+  }
+}
+
 
 /* =========================
    ABOUT SECTION
